@@ -1,0 +1,93 @@
+---
+title: "Assignment 2_ Functions"
+author: "Taylor Cook"
+date: "2025-02-23"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Assignment 2
+
+Think of a function that might be useful for environmental science and management data analysis. Keep it simple.
+
+1. Code your function in R and store as a single .R file. Make sure you adequately comment and include some error checking.  
+
+2. In Rmarkdown, generate some sample data and use this data to illustrate how your function might work. Then use this data to show what your function can do. You can be creative here - the illustration might be a graph or it could be a meaningful result (sum of yields). Just make sure you add enough text that we can understand what you did
+
+3. Submit the .R file and the Rmarkdown file on Canvas
+
+```{r}
+# A function to calculate the volume of a tree, which can be used for forest management to calcualte the amount of wood that can be harvested from a tree or the economic value of a tree.
+#inputs: diameter at breast height (dbh) and height of tree
+#output: volume of tree
+#volume = (pi/4) * dbh^2 * height
+
+# pi/4 is the volume of a cylinder 
+# dbh is the diameter of the tree at breast height
+# height is the height of the tree.
+
+
+
+tree_volume <- function(dbh, height) {
+  # Check if any value in dbh is invalid
+  if (any(dbh <= 0)) {
+    stop("All DBH values must be greater than 0")
+  }
+  
+  # Check if any value in height is invalid
+  if (any(height <= 0)) {
+    stop("All height values must be greater than 0")
+  }
+  
+  # Compute tree volume (vectorized calculation)
+  volume <- (pi / 4) * (dbh^2) * height
+  return(volume)
+}
+```
+
+
+```{r}
+#generate some sample data
+dbh <- c(10, 20, 30, 40, 50)
+height <- c(50, 60, 70, 80, 90)
+
+#use the function to calculate the volume of each tree
+
+all_tree_volume <- tree_volume(dbh, height)
+all_tree_volume
+sum(all_tree_volume)
+
+#for fun, we will calculate the economic value of the trees
+#assume the price of wood is $100 per cubic meter
+price_per_cubic_meter <- 100
+economic_value <- all_tree_volume * price_per_cubic_meter
+economic_value
+
+sum(economic_value)
+
+
+```
+
+
+```{r}
+#plot the volume of each tree
+
+plot(dbh, all_tree_volume, xlab = "DBH", ylab = "Volume", main = "Volume of Trees")
+
+```
+
+
+```{r}
+#plot the economic value of each tree
+
+plot(dbh, economic_value, xlab = "DBH", ylab = "Economic Value", main = "Economic Value of Trees")
+
+```
+
+
