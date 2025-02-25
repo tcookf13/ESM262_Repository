@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rproj
+
+#tells git, these are files I dont want to update in github
+#useful to put .Rproj in here, so files dont get messed up
