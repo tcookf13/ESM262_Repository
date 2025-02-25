@@ -3,7 +3,7 @@
 
 
 #Function Description: 
-# A function to calculate the volume of a tree, which can be used for forest management to calcualte the amount of wood that can be harvested from a tree or the economic value of a tree.
+# A function to calculate the volume of a tree, which can be used for forest management to calculate the amount of wood that can be harvested from a tree or the economic value of a tree.
 #inputs: diameter at breast height (dbh) and height of tree
 #output: volume of tree
 #volume = (pi/4) * dbh^2 * height
