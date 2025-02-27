@@ -91,3 +91,8 @@ plot(dbh, economic_value, xlab = "DBH", ylab = "Economic Value", main = "Economi
 ```
 
 
+```{r}
+# This is Jessica making a comment on your code :)
+## Looks excellent! Thanks for helping me with Github :) 
+```
+
