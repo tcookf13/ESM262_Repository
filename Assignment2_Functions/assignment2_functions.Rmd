@@ -34,6 +34,13 @@ Think of a function that might be useful for environmental science and managemen
 
 
 
+#' Tree Volume Function
+#'
+#' @param dbh 
+#' @param height 
+#'
+#' @return
+
 tree_volume <- function(dbh, height) {
   # Check if any value in dbh is invalid
   if (any(dbh <= 0)) {
